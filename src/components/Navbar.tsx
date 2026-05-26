@@ -72,13 +72,13 @@ export default function Navbar({
                 onClick={() => handleNavClick(item.id)}
                 className={`relative flex items-center space-x-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-all group focus:outline-none cursor-pointer ${
                   isActive
-                    ? "text-pink-glow bg-purple-light/40"
+                    ? "text-yellow-400 bg-purple-light/40"
                     : "text-neutral-subtle hover:text-white hover:bg-purple-light/20"
                 }`}
               >
                 <span>{item.label}</span>
                 {isActive && (
-                  <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-pink-primary rounded-full" />
+                  <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-yellow-400 rounded-full" />
                 )}
               </button>
             );
@@ -90,21 +90,21 @@ export default function Navbar({
           {/* Meal Preferences Micro-Badge */}
           <button
             onClick={onOpenTastePredictor}
-            className="hidden lg:flex items-center space-x-1.5 rounded-full border border-pink-primary/40 bg-pink-primary/10 px-3.5 py-1.5 text-xs font-semibold text-pink-glow hover:bg-pink-primary/20 transition-all cursor-pointer shadow-sm shadow-pink-primary/10"
+            className="hidden lg:flex items-center space-x-1.5 rounded-full border border-yellow-500/30 bg-yellow-400/10 px-3.5 py-1.5 text-xs font-bold text-yellow-400 hover:bg-yellow-400/20 transition-all cursor-pointer shadow-sm shadow-yellow-500/5"
           >
-            <Heart className="h-3.5 w-3.5 animate-pulse text-pink-primary fill-pink-primary/20" />
+            <Heart className="h-3.5 w-3.5 animate-pulse text-yellow-400 fill-yellow-450/20" />
             <span>Meal Preferences</span>
           </button>
 
           {/* Cart Trigger */}
           <button
             onClick={() => setIsCartOpen(true)}
-            className="relative flex h-10 px-4 items-center justify-center space-x-2 rounded-xl bg-purple-light/50 border border-purple-light/80 text-white hover:bg-pink-primary/10 hover:border-pink-primary/40 transition-all cursor-pointer"
+            className="relative flex h-10 px-4 items-center justify-center space-x-2 rounded-xl bg-purple-light/50 border border-purple-light/80 text-white hover:bg-red-650/10 hover:border-red-500/40 transition-all cursor-pointer"
           >
-            <ShoppingBag className="h-4.5 w-4.5 text-pink-glow" />
+            <ShoppingBag className="h-4.5 w-4.5 text-yellow-400" />
             <span className="font-display font-medium text-xs">Cart</span>
             {totalItems > 0 && (
-              <span className="flex h-5 min-w-[20px] px-1.5 items-center justify-center rounded-full bg-pink-primary text-[10px] font-bold text-white animate-pulse">
+              <span className="flex h-5 min-w-[20px] px-1.5 items-center justify-center rounded-full bg-gradient-to-r from-red-600 to-red-500 text-[10px] font-bold text-white animate-pulse">
                 {totalItems}
               </span>
             )}
@@ -132,7 +132,7 @@ export default function Navbar({
                 onClick={() => handleNavClick(item.id)}
                 className={`flex w-full items-center space-x-3 rounded-lg px-4 py-2.5 text-left text-sm font-medium transition-all ${
                   isActive
-                    ? "text-pink-glow bg-purple-light/60 border-l-4 border-pink-primary"
+                    ? "text-yellow-400 bg-purple-light/60 border-l-4 border-yellow-400"
                     : "text-neutral-subtle hover:text-white hover:bg-purple-light/30"
                 }`}
               >
@@ -147,7 +147,7 @@ export default function Navbar({
                 setIsMenuOpen(false);
                 onOpenTastePredictor();
               }}
-              className="flex w-full items-center justify-center space-x-2 rounded-lg bg-gradient-to-r from-pink-primary to-purple-bright px-4 py-2.5 text-center text-sm font-bold text-white hover:opacity-90"
+              className="flex w-full items-center justify-center space-x-2 rounded-lg bg-gradient-to-r from-red-600 to-yellow-500 px-4 py-2.5 text-center text-sm font-bold text-white hover:opacity-95"
             >
               <Heart className="h-4 w-4 text-white fill-white/20" />
               <span>Food Preferences</span>

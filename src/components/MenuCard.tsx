@@ -88,16 +88,16 @@ export default function MenuCard({ item, onAddToCart, userTasteProfile }: MenuCa
   };
 
   return (
-    <div className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-purple-light bg-purple-card/75 transition-all duration-300 hover:border-pink-primary/45 hover:shadow-xl hover:shadow-pink-primary/5">
+    <div className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-purple-light bg-purple-card/75 transition-all duration-300 hover:border-red-500/50 hover:shadow-[0_0_20px_rgba(239,68,68,0.12)]">
       
       {/* Upper part of Card containing image and badges */}
       <div className="relative">
         
         {/* Dynamic Taste Profile Rating */}
         {matchScore !== null && (
-          <div className="absolute top-3 left-3 z-20 flex items-center space-x-1 rounded-full bg-pink-primary px-2.5 py-1 text-[10px] font-bold text-white shadow-lg animate-bounce">
-            <Heart className="h-3 w-3 fill-white text-pink-primary" />
-            <span>{matchScore}% Preference Match</span>
+          <div className="absolute top-3 left-3 z-20 flex items-center space-x-1 rounded-full bg-gradient-to-r from-red-600 to-pink-600 px-2.5 py-1 text-[10px] font-bold text-white shadow-lg animate-bounce">
+            <Heart className="h-3 w-3 fill-yellow-400 text-yellow-400 animate-pulse" />
+            <span>{matchScore}% Match</span>
           </div>
         )}
 
@@ -105,12 +105,12 @@ export default function MenuCard({ item, onAddToCart, userTasteProfile }: MenuCa
         <div className="absolute top-3 right-3 z-20 flex flex-col gap-1.5 items-end">
           {item.spicy && (
             <span className="flex items-center space-x-1 rounded-full bg-red-600 px-2 py-0.5 text-[9px] font-bold tracking-wider text-white uppercase shadow-sm">
-              <Flame className="h-2.5 w-2.5 text-white animate-pulse" />
+              <Flame className="h-2.5 w-2.5 text-yellow-300 animate-pulse" />
               <span>SPICY</span>
             </span>
           )}
           {item.popular && (
-            <span className="rounded-full bg-purple-bright bg-opacity-90 px-2 py-0.5 text-[9px] font-bold tracking-wider text-white uppercase shadow-sm">
+            <span className="rounded-full bg-yellow-400 px-2 py-0.5 text-[9px] font-extrabold tracking-wider text-black uppercase shadow-sm">
               POPULAR
             </span>
           )}
@@ -139,7 +139,7 @@ export default function MenuCard({ item, onAddToCart, userTasteProfile }: MenuCa
           <div className="flex items-center space-x-3 text-[11px] text-neutral-subtle font-mono">
             <div className="flex items-center space-x-0.5">
               <Star className="h-3 w-3 text-amber-400 fill-amber-400" />
-              <span className="font-bold text-white">{item.rating}</span>
+              <span className="font-bold text-yellow-400">{item.rating}</span>
             </div>
             <span>•</span>
             <div className="flex items-center space-x-1">
@@ -233,7 +233,10 @@ export default function MenuCard({ item, onAddToCart, userTasteProfile }: MenuCa
               <ChevronRight className="h-3 w-3" />
             </button>
             {item.aiConfidence && (
-              <span className="font-mono text-[9px] text-emerald-400 font-semibold">{item.aiConfidence}</span>
+              <span className="font-mono text-[9px] text-yellow-400 font-extrabold uppercase tracking-wider flex items-center space-x-0.5">
+                <Sparkles className="h-2.5 w-2.5 text-yellow-400 animate-pulse" />
+                <span>{item.aiConfidence}</span>
+              </span>
             )}
           </div>
         )}
@@ -246,14 +249,14 @@ export default function MenuCard({ item, onAddToCart, userTasteProfile }: MenuCa
 
           <button
             onClick={handleAddToCartClick}
-            className={`flex items-center space-x-1.5 rounded-xl px-4 py-2.5 text-xs font-extrabold shadow-md transition-all cursor-pointer ${
+            className={`flex items-center space-x-1.5 rounded-xl px-4 py-2.5 text-xs font-extrabold shadow-md transition-all active:scale-95 cursor-pointer ${
               isAdded
                 ? "bg-emerald-600 text-white"
-                : "bg-pink-primary text-white hover:bg-pink-hover shadow-pink-primary/10"
+                : "bg-gradient-to-r from-red-600 to-pink-500 hover:from-red-500 hover:to-pink-400 text-white shadow-lg shadow-red-600/20"
             }`}
           >
-            {isAdded ? <Check className="h-4 w-4 animate-scaleUp" /> : <Plus className="h-4 w-4" />}
-            <span>{isAdded ? "Added!" : "Add to Cart"}</span>
+            {isAdded ? <Check className="h-4 w-4 animate-scaleUp" /> : <Plus className="h-4 w-4 text-yellow-300" />}
+            <span>{isAdded ? "Added!" : "Buy Now"}</span>
           </button>
         </div>
 

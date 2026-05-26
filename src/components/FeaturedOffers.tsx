@@ -41,12 +41,12 @@ export default function FeaturedOffers({ setCurrentPage, onApplyPromoCode }: Fea
         
         {/* Header Title Section */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div className="inline-flex items-center space-x-2 rounded-full bg-pink-primary/10 border border-pink-primary/30 px-3 py-1">
-            <Tag className="h-3.5 w-3.5 text-pink-glow" />
-            <span className="text-[10px] uppercase font-bold tracking-widest text-pink-glow">Delicious Rewards</span>
+          <div className="inline-flex items-center space-x-2 rounded-full bg-red-600/10 border border-red-600/30 px-3 py-1">
+            <Tag className="h-3.5 w-3.5 text-red-500 animate-pulse" />
+            <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-red-500">Delicious Rewards</span>
           </div>
           <h2 className="font-display text-3xl font-extrabold sm:text-4xl text-white">
-            Special Dining <span className="text-pink-glow">Offers &amp; Deals</span>
+            Special Dining <span className="text-yellow-400">Offers &amp; Deals</span>
           </h2>
           <p className="font-sans text-neutral-subtle font-light text-sm">
             Claim your exclusive discount code below to enjoy fantastic warm meals cooked with fresh ingredients, speed, and love.
@@ -58,12 +58,12 @@ export default function FeaturedOffers({ setCurrentPage, onApplyPromoCode }: Fea
           {offers.map((offer) => (
             <div
               key={offer.id}
-              className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-purple-light/70 bg-purple-card/60 transition-all duration-300 hover:border-pink-primary/50 hover:shadow-xl hover:shadow-pink-primary/5"
+              className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-purple-light/70 bg-purple-card/60 transition-all duration-300 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/10"
             >
               <div>
                 {/* Promo Header Image banner */}
                 <div className="relative h-48 overflow-hidden bg-purple-dark">
-                  <div className="absolute top-3 left-3 z-10 rounded-full bg-pink-primary px-3 py-1 font-display text-[10px] font-extrabold uppercase text-white shadow-md">
+                  <div className="absolute top-3 left-3 z-10 rounded-full bg-gradient-to-r from-red-600 to-red-500 px-3 py-1 font-display text-[10px] font-extrabold uppercase text-white shadow-md border border-red-400">
                     {offer.badge}
                   </div>
                   <img
@@ -77,7 +77,7 @@ export default function FeaturedOffers({ setCurrentPage, onApplyPromoCode }: Fea
 
                 {/* Offer details */}
                 <div className="p-6 space-y-3 text-left">
-                  <h3 className="font-display text-lg font-bold text-white transition-colors group-hover:text-pink-glow">
+                  <h3 className="font-display text-lg font-bold text-white transition-colors group-hover:text-yellow-400">
                     {offer.title}
                   </h3>
                   <p className="font-sans text-xs text-neutral-subtle font-light leading-relaxed">
@@ -93,7 +93,7 @@ export default function FeaturedOffers({ setCurrentPage, onApplyPromoCode }: Fea
                     <p className="font-mono text-[9px] text-neutral-subtle leading-none uppercase">COUPON CODE</p>
                     <button
                       onClick={() => handleCopyCode(offer.discountCode)}
-                      className="mt-1 flex items-center space-x-1.5 rounded-lg bg-purple-dark border border-purple-light hover:border-pink-primary/50 px-3 py-1.5 text-xs font-mono font-bold text-pink-glow transition-all active:scale-95 focus:outline-none cursor-pointer"
+                      className="mt-1 flex items-center space-x-1.5 rounded-lg bg-purple-dark border border-purple-light hover:border-red-500/50 px-3 py-1.5 text-xs font-mono font-bold text-yellow-400 transition-all active:scale-95 focus:outline-none cursor-pointer"
                     >
                       <span>{offer.discountCode}</span>
                       {copiedCode === offer.discountCode ? (
@@ -107,7 +107,7 @@ export default function FeaturedOffers({ setCurrentPage, onApplyPromoCode }: Fea
                   <div className="text-right space-y-1">
                     <p className="font-mono text-[9px] text-neutral-subtle leading-none uppercase">EXPIRES</p>
                     <div className="flex items-center space-x-1 text-xs text-neutral-light justify-end mt-1.5 font-medium">
-                      <Calendar className="h-3 w-3 text-pink-glow" />
+                      <Calendar className="h-3 w-3 text-yellow-400" />
                       <span>{offer.expiryDate}</span>
                     </div>
                   </div>
@@ -125,10 +125,10 @@ export default function FeaturedOffers({ setCurrentPage, onApplyPromoCode }: Fea
                     handleCopyCode(offer.discountCode);
                     setCurrentPage("menu");
                   }}
-                  className="w-full flex items-center justify-center space-x-2 rounded-xl bg-purple-light/70 border border-purple-light text-center py-2.5 text-xs font-bold text-white hover:bg-pink-primary/20 hover:border-pink-primary/40 transition-all focus:outline-none cursor-pointer"
+                  className="w-full flex items-center justify-center space-x-2 rounded-xl bg-purple-light/70 border border-purple-light text-center py-2.5 text-xs font-bold text-white hover:bg-red-600/20 hover:border-red-500/45 transition-all focus:outline-none cursor-pointer"
                 >
                   <span>Claim Offer</span>
-                  <ArrowRight className="h-3.5 w-3.5 text-pink-glow" />
+                  <ArrowRight className="h-3.5 w-3.5 text-yellow-400" />
                 </button>
               </div>
 

@@ -65,12 +65,12 @@ export default function Offers({ setCurrentPage, onApplyPromoCode, appliedPromo 
         
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
-          <div className="inline-flex items-center space-x-2 rounded-full bg-pink-primary/10 border border-pink-primary/30 px-3 py-1">
-            <Heart className="h-3.5 w-3.5 text-pink-glow animate-pulse" />
-            <span className="text-[10px] uppercase font-bold tracking-widest text-pink-glow">Tasty Rewards &amp; Coupons</span>
+          <div className="inline-flex items-center space-x-2 rounded-full bg-red-650/10 border border-red-500/30 px-3 py-1">
+            <Heart className="h-3.5 w-3.5 text-yellow-400 animate-pulse fill-yellow-400/20" />
+            <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-yellow-400">Tasty Rewards &amp; Coupons</span>
           </div>
           <h1 className="font-display text-3xl font-extrabold sm:text-4xl text-white">
-            Special Offers &amp; <span className="text-pink-glow">Vouchers</span>
+            Special Offers &amp; <span className="bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text text-transparent">Vouchers</span>
           </h1>
           <p className="font-sans text-neutral-subtle font-light text-xs max-w-2xl mx-auto leading-relaxed">
             Use the discount codes below to enjoy savings on your favourite dishes. Looking to spread some love? Surprise a loved one with a digital gift card instantly.
@@ -78,11 +78,11 @@ export default function Offers({ setCurrentPage, onApplyPromoCode, appliedPromo 
         </div>
 
         {/* 1. INTERACTIVE CODE VALIDATOR BOX */}
-        <div className="max-w-2xl mx-auto rounded-2xl border border-purple-light bg-purple-card/75 p-6 text-left space-y-4">
+        <div className="max-w-2xl mx-auto rounded-2xl border border-purple-light bg-purple-card/75 p-6 text-left space-y-4 hover:border-red-500/30 transition-colors duration-300">
           
           <div className="space-y-1">
             <h3 className="font-display text-sm font-bold text-white uppercase flex items-center space-x-2">
-              <Sparkles className="h-4 w-4 text-pink-primary" />
+              <Sparkles className="h-4 w-4 text-yellow-400 animate-pulse" />
               <span>Enter Your Promo Code</span>
             </h3>
             <p className="font-sans text-[11px] text-neutral-subtle font-light">
@@ -97,11 +97,11 @@ export default function Offers({ setCurrentPage, onApplyPromoCode, appliedPromo 
               placeholder="Enter code (e.g. NEZWELCOME, EXPRESS15, NEZLOVE)..."
               value={typedCode}
               onChange={(e) => setTypedCode(e.target.value)}
-              className="w-full rounded-xl border border-purple-light/75 bg-purple-dark px-4 py-3 text-xs text-white placeholder-neutral-subtle uppercase tracking-widest font-mono font-bold focus:border-pink-primary/60 focus:outline-none"
+              className="w-full rounded-xl border border-purple-light/75 bg-purple-dark px-4 py-3 text-xs text-white placeholder-neutral-subtle uppercase tracking-widest font-mono font-bold focus:border-red-500/60 focus:outline-none"
             />
             <button
               type="submit"
-              className="rounded-xl bg-pink-primary hover:bg-pink-hover text-white text-xs font-bold px-6 py-3 transition-colors shrink-0 flex items-center justify-center space-x-1.5 focus:outline-none cursor-pointer"
+              className="rounded-xl bg-gradient-to-r from-red-600 to-pink-500 hover:from-red-500 hover:to-pink-400 text-white text-xs font-bold px-6 py-3 transition-all shrink-0 flex items-center justify-center space-x-1.5 focus:outline-none cursor-pointer shadow-md shadow-red-600/10"
             >
               <span>Validate Code</span>
             </button>
@@ -150,11 +150,11 @@ export default function Offers({ setCurrentPage, onApplyPromoCode, appliedPromo 
           
           <div className="text-center max-w-3xl mx-auto space-y-2">
             <div className="inline-flex items-center space-x-2 rounded-full bg-purple-light/50 border border-purple-light px-3 py-1">
-              <Gift className="h-3.5 w-3.5 text-pink-glow" />
-              <span className="text-[10px] uppercase font-bold tracking-widest text-pink-glow font-mono">NezFood Gift Card</span>
+              <Gift className="h-3.5 w-3.5 text-yellow-400" />
+              <span className="text-[10px] uppercase font-bold tracking-widest text-yellow-400 font-mono">NezFood Gift Card</span>
             </div>
             <h2 className="font-display text-2xl font-extrabold text-white">
-              Share the Joy of <span className="text-gradient-purple-pink font-display font-extrabold">Perfect Food</span>
+              Share the Joy of <span className="bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text text-transparent font-display font-extrabold">Perfect Food</span>
             </h2>
             <p className="font-sans text-xs text-neutral-subtle font-light max-w-xl mx-auto leading-relaxed">
               Order dynamic digital gift vouchers immediately delivered via active email blocks, tailored with premium neon themes.
@@ -162,20 +162,20 @@ export default function Offers({ setCurrentPage, onApplyPromoCode, appliedPromo 
           </div>
 
           {purchasedGift && (
-            <div className="max-w-2xl mx-auto rounded-xl bg-purple-card animate-scaleUp border border-pink-primary/30 p-4 text-center">
+            <div className="max-w-2xl mx-auto rounded-xl bg-purple-card animate-scaleUp border border-red-550/30 p-4 text-center">
               <p className="text-emerald-400 text-xs font-semibold">🎉 {purchasedGift}</p>
             </div>
           )}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { amount: "$25", title: "NezFood Quick Treat", color: "from-pink-primary to-purple-bright", desc: "Perfect for a heart-warming lunch or a delicious dessert treat." },
-              { amount: "$50", title: "NezFood Cozy Dining", color: "from-purple-bright to-pink-glow", desc: "Delight a pair of foodies with full customizable double main courses." },
-              { amount: "$100", title: "NezFood Grand Feast", color: "from-pink-glow to-amber-500", desc: "Perfect for family meals or major celebrations setup to spark joy." }
+              { amount: "$25", title: "NezFood Quick Treat", color: "from-red-650 from-red-600 to-pink-500", desc: "Perfect for a heart-warming lunch or a delicious dessert treat." },
+              { amount: "$50", title: "NezFood Cozy Dining", color: "from-red-600 to-yellow-500", desc: "Delight a pair of foodies with full customizable double main courses." },
+              { amount: "$100", title: "NezFood Grand Feast", color: "from-red-600 via-rose-550 to-yellow-400", desc: "Perfect for family meals or major celebrations setup to spark joy." }
             ].map((gift, idx) => (
               <div
                 key={idx}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-purple-light bg-purple-card/60 p-6 text-left transition-all duration-300 hover:border-pink-primary/40 hover:shadow-xl hover:shadow-pink-primary/5"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-purple-light bg-purple-card/60 p-6 text-left transition-all duration-300 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/10"
               >
                 <div className="space-y-4">
                   
